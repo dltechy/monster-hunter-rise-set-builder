@@ -24,6 +24,8 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -36,8 +38,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "prepare": "husky install",
     "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx --max-warnings=0 .",
-    "lint-fix": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx --max-warnings=0 --fix ."
+    "lint-fix": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx --max-warnings=0 --fix .",
+    "pre-commit": "tsc --noEmit && lint-staged"
   },
   "eslintConfig": {
     "extends": [
